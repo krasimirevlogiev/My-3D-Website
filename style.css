@@ -24,16 +24,18 @@ main {
   position: absolute;
   width: 100%;
   margin: 0px auto;
-  padding: 120px 0px;
+  padding: 300px 0px;
   
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  text-align: right;
 }
 
 h1, h2, h3, blockquote {
   font-family: elevon, sans-serif;
   font-weight: 700;
   font-style: normal;
+  
 }
 
 canvas {
@@ -46,7 +48,7 @@ canvas {
 
   header {
     background: var(--dark-bg);
-    grid-column: 2 / span 5;
+    grid-column: 7 / span 5;
     font-size: 2.5rem;
     padding: 2rem;
     margin-bottom: var(--spacing);
