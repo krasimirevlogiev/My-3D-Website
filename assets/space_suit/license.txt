@@ -1,0 +1,11 @@
+Model Information:
+* title:	Rust Space Suit
+* source:	https://sketchfab.com/3d-models/rust-space-suit-c9b05b4878d64c68945ba8858c523a68
+* author:	Homless_Models (https://sketchfab.com/hl_models)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Rust Space Suit" (https://sketchfab.com/3d-models/rust-space-suit-c9b05b4878d64c68945ba8858c523a68) by Homless_Models (https://sketchfab.com/hl_models) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
