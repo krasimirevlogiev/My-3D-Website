@@ -13,10 +13,7 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(30);
 renderer.render(scene1, camera);
-//Second
  
-
-
 
 //Light
 const light = new THREE.SpotLight(0xffffff, 100);
@@ -59,16 +56,27 @@ loader_moon.load(
     MoonModel.traverse((child) => {
       if (child.isMesh) child.material = material;
     });
-
+    MoonModel.position.x = 0;
+    MoonModel.position.y = 1;
+    MoonModel.position.z = -5;
     scene1.add(MoonModel);
     renderer.render(scene1, camera);
-
 });
 
-
-
-
 const controls = new OrbitControls(camera, renderer.domElement);
+
+//Adding stars
+function Stars(){
+  const geometry = new THREE.SphereGeometry(0.1);
+  const material = new THREE.MeshNormalMaterial();
+  const star = new THREE.Mesh(geometry, material);
+
+
+  const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
+  star.position.set(x,y,z);
+  scene1.add(star);
+}
+Array(300).fill().forEach(Stars);
 
 //Update Camera Movement
 function moveCamera(){
@@ -89,6 +97,9 @@ function animate(){
   //Moving
   AstroModel.rotation.y += 0.01;
   AstroModel.rotation.z += 0.0001;
+
+  MoonModel.rotation.y += 0.01;
+  MoonModel.rotation.x += 0.001;
 
   controls.update();
   renderer.render(scene1, camera);
