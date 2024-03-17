@@ -47,6 +47,8 @@ loader_astro.load(
     renderer.render(scene1, camera);
   } 
 );
+
+//Moon model
 let MoonModel;
 const loader_moon = new GLTFLoader();
 loader_moon.load(
@@ -62,6 +64,8 @@ loader_moon.load(
     scene1.add(MoonModel);
     renderer.render(scene1, camera);
 });
+
+
 
 const controls = new OrbitControls(camera, renderer.domElement);
 
@@ -82,7 +86,7 @@ Array(300).fill().forEach(Stars);
 function moveCamera(){
   const t = document.body.getBoundingClientRect().top;
   
-
+  //Camera Movement
   camera.position.z = t * -0.005;
   camera.position.x = 5;
   camera.position.y = 10 - window.scrollY/500;
@@ -90,16 +94,18 @@ function moveCamera(){
 document.body.onscroll = moveCamera;
 moveCamera();
 
-//Animation
+//Animation and movement
 function animate(){
   requestAnimationFrame(animate);
   
   //Moving
   AstroModel.rotation.y += 0.01;
-  AstroModel.rotation.z += 0.0001;
+  AstroModel.translateX(0.01);
 
   MoonModel.rotation.y += 0.01;
   MoonModel.rotation.x += 0.001;
+  MoonModel.translateX(0.1);
+
 
   controls.update();
   renderer.render(scene1, camera);
