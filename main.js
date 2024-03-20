@@ -98,14 +98,15 @@ moveCamera();
 function animate(){
   requestAnimationFrame(animate);
   
-  //Moving
+  if(AstroModel){
   AstroModel.rotation.y += 0.01;
   AstroModel.translateX(0.01);
-
+  }
+  if(MoonModel){
   MoonModel.rotation.y += 0.01;
   MoonModel.rotation.x += 0.001;
   MoonModel.translateX(0.1);
-
+  }
 
   controls.update();
   renderer.render(scene1, camera);
